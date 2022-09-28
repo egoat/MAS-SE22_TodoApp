@@ -1,0 +1,67 @@
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	font-family: sans-serif;
+}
+
+.todo__container > div {
+	padding: 1em;
+}
+
+.todo__container {
+	height: 100%;
+	width:  1000px;
+	display: grid;
+	grid-template-columns: 120px 1fr;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas:
+		"app-bar app-bar"
+		"content content"
+		"footer footer";
+}
+
+.todo__app-bar {
+	grid-area: app-bar;
+	background: lightcoral;
+	text-align: left;
+	line-height: 3em;
+}
+
+
+.todo__content {
+	grid-area: content;
+	background: lightblue;
+}
+
+.todo__footer {
+	/* myself as an item */
+	grid-area: footer;
+	height: 2em;
+	line-height: 100%;
+	background: lightyellow;
+
+	/* myself as a container */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.todo__search {
+	width: 300px;
+	box-sizing: border-box;
+	margin-left:  auto;
+	margin-right: auto;
+}
+
+.todo_row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.deleteButton {
+	justify-self: flex-end;
+}
