@@ -1,41 +1,41 @@
-<link rel="stylesheet" href="styles.css">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo App</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-  <div class="todo__container">
-	  <div class="todo__app-bar">Todo App</div>
-	  <div class="todo__content">
-        <div class="todo__search">
-          <div class="todo_search_input">
-            <input type="text" value="Aufgabe...">
-            <button>add</button>
-           </div>    
-          <input type="checkbox" id="showAll">
-          <label for="showAll">show all</label>
-        </div>
-        <div class="list_todos">
-          <div class="todo_row">
-            <div>
-              <input type="checkbox">
-              <span> x x x </span> 
-              Todo
+  <div class="outerContainer">
+    <div class="container">
+  	  <div class="app-bar"><h1>Todo App</h1></div>
+  	  <div class="content">
+          <div class="search">
+            <div class="search_input">
+              <input type="text" value="Todo...">
+              <button>add</button>
+             </div>          
+            <label for="showAll"><input type="checkbox" id="showAll">show all</label>
+          </div>
+          <div class="todoList">
+            <div class="todoItem">
+                <input type="checkbox" onchange="done(this)">
+                <span> ⚡⚡⚡ </span> 
+                <span class="todoText">Todo TodoTodoTodoTodoTodoTodo TodoTodoTodoTodoTodo TodoTodoTodoTodoTodoTodoTodoTodoTodo fasdf asdf asdf sd f</span>
+                <button class="deleteButton">&#x2718;</button>
             </div>
-            <div>
-              <button class="deleteButton">delete!</button>
+            <div class="todoItem">
+                <input type="checkbox" onchange="done(this)">
+                <span> ⚡⚡⚡ </span>
+                <span class="todoText">Todo TodoTodoTodoTodoTodoTodo TodoTodoTodoTodoTodo TodoTodoTodoTodoTodoTodoTodoTodoTodo</span>
+                <button class="deleteButton">&#x2718;</button>
             </div>
           </div>
-          <div class="todo_row">
-            <div>
-              <input type="checkbox">
-              <span> x x x </span> 
-              Todo TodoTodoTodoTodoTodoTodo TodoTodoTodoTodoTodo TodoTodoTodoTodoTodoTodoTodoTodoTodo
-            </div>
-            <div>
-              <button>delete!</button>
-            </div>
-          </div>
-        </div>
-          
+            
+      </div>
+  	  <div class="footer">List of Todo by Nath and Ria</div>
     </div>
-	  <div class="todo__footer">List of Todo by Nath and Ria</div>
-      
-</div>
+  </div>
 </body> 
+
+<script type="text/javascript" src="script.js"></script>
