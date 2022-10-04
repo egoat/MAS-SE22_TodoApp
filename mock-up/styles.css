@@ -54,9 +54,15 @@ h1 {
 	margin-right: auto;
 }
 
-.todoList {
+.grid{
+	display:grid;
+	grid-template-columns: auto auto 1fr auto ;
+	column-gap:5%;
+	row-gap:10%;
 	padding-top: 2em;
 }
+
+
 
 .todoItem {
 	display: flex;

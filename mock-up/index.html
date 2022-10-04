@@ -12,26 +12,24 @@
   	  <div class="content">
           <div class="search">
             <div class="search_input">
-              <input type="text" value="Todo...">
-              <button>add</button>
-             </div>          
+              <input type="text" class='taskInput' placeholder="Todo...">
+              <button class="addButton" onclick="addTask()">add</button>             </div>          
             <label for="showAll"><input type="checkbox" id="showAll">show all</label>
           </div>
-          <div class="todoList">
-            <div class="todoItem">
-                <input type="checkbox" onchange="done(this)">
-                <span> ⚡⚡⚡ </span> 
-                <span class="todoText">Todo TodoTodoTodoTodoTodoTodo TodoTodoTodoTodoTodo TodoTodoTodoTodoTodoTodoTodoTodoTodo fasdf asdf asdf sd f</span>
-                <button class="deleteButton">&#x2718;</button>
-            </div>
-            <div class="todoItem">
-                <input type="checkbox" onchange="done(this)">
-                <span> ⚡⚡⚡ </span>
-                <span class="todoText">Todo TodoTodoTodoTodoTodoTodo TodoTodoTodoTodoTodo TodoTodoTodoTodoTodoTodoTodoTodoTodo</span>
-                <button class="deleteButton">&#x2718;</button>
-            </div>
-          </div>
-            
+          <div class="grid">
+            <input type="checkbox" onchange="done(this)">
+            <span> ⚡⚡⚡ </span> 
+            <span class="todoText">Todo Todo</span>
+            <button class="deleteButton">&#x2718;</button>
+            <input type="checkbox" onchange="done(this)">
+            <span> ⚡⚡⚡ </span> 
+            <span class="todoText">Todo Todoasdddssadsadds dddddddddddddddddddddddddsddddddddddads</span>
+            <button class="deleteButton">&#x2718;</button>
+            <input type="checkbox" onchange="done(this)">
+            <span> ⚡⚡⚡ </span> 
+            <span class="todoText">Todo Todoasdddssadssasdsdsdasdas                    dsdaasdsasaddsdsaddsads</span>
+            <button class="deleteButton">&#x2718;</button>
+          </div>   
       </div>
   	  <div class="footer">List of Todo by Nath and Ria</div>
     </div>
