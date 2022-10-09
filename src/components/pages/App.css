@@ -58,11 +58,26 @@ h1 {
 	padding-top: 2em;
 }
 
+.grid {
+	display:grid;
+	grid-template-columns: repeat(4, auto) ;
+	column-gap: 10px;
+	row-gap: 10px;
+}
+
 .todoItem {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
 	padding:  0.1em;
+}
+
+.checkbox {
+	align-self: start;	
+}
+
+.todoText {
+	margin: 0px 4px;
 }
 
 .deleteButton {
