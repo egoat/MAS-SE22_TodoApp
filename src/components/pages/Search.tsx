@@ -1,41 +1,22 @@
+import { createTodo, Todo } from 'models/Todo'
 import './Search.css'
-import {deleteTask} from './TodoItem'
 
-export const Search=() => (
-<div className="search">
-<div className="search_input">
-      <input type="text" id="searchInput" placeholder='Todo...'></input>
-    <button className="addButton" onClick={addTask}>add</button>
- </div>          
-<label htmlFor="showAll"><input type="checkbox" id="showAll"></input>show all</label>
-</div>)
+interface Props {
+	todos: Todo[]
+	setTodos: (todos: Todo[]) => void
+}
 
-function addTask(event:any) {
+// TODO: "blub" durch Text aus Form ersetzten
+// TODO: uuid korrekt setzten, so dass jedes Element eine eindeutige ID hat.
+export const Search=({todos, setTodos}: Props) => {
 
-	let newCheckbox=document.createElement('input');
-	newCheckbox.setAttribute('type','checkbox');
-	newCheckbox.className = 'checkbox';
-	newCheckbox.onchange = done;
-	
-	let newPrio=document.createElement('span');
-	newPrio.innerHTML = "⚡⚡⚡";
-	
-	let newTaskName=document.createElement('span');
-	newTaskName.className = 'todoText';
-	let inputValue = (document.getElementById('searchInput') as HTMLInputElement).value;
-	newTaskName.innerHTML =inputValue;
-	console.log(inputValue);
-	
-	let newDeleteBtn=document.createElement('button');
-	newDeleteBtn.className = 'deleteButton';
-	newDeleteBtn.innerHTML ="&#x2718";
-	newDeleteBtn.onclick = deleteTask;
-	
-	let newTodoItem = document.createElement('div');
-	newTodoItem.className = 'todoItem';
-	newTodoItem.append(newCheckbox, newPrio, newTaskName, newDeleteBtn);
-		
-	let todoList=document.getElementById('todoList');
-	console.log(todoList);
-	todoList?.append(newTodoItem);
+	return (
+		<div className="search">
+			<div className="search_input">
+				<input type="text" id="searchInput" placeholder='Todo...'></input>
+				<button className="addButton" onClick={e => setTodos([...todos,createTodo("blub")])}>add</button>
+			</div>          
+			<label htmlFor="showAll"><input type="checkbox" id="showAll"></input>show all</label>
+		</div>
+	)
 }
