@@ -1,0 +1,12 @@
+.footer {
+	/* myself as an item */
+	grid-area: footer;
+	height: 1.5em;
+	line-height: 100%;
+	background: #DD7703;
+
+	/* myself as a container */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

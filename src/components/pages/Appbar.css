@@ -1,0 +1,7 @@
+.app-bar {
+	grid-area: app-bar;
+	background: #70A72C;
+	text-align: left;
+	line-height: 3em;
+	padding-bottom: 3em;
+}
