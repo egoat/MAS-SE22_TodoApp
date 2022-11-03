@@ -21,17 +21,17 @@ export const TodoList = ({todos, setTodos,todoTextInput,updateTodoText, showAllT
 	}
 
 	function isDone(id:any){
-		const doneTodo = todos.map((item) => {
-			if (item.id === id) {
-			  const updatedItem = {
-				...item,
-				done: !item.done,
+		const doneTodo = todos.map((todo) => {
+			if (todo.id === id) {
+			  const updatedTodo = {
+				...todo,
+				done: !todo.done,
 			  };
 	  
-			  return updatedItem;
+			  return updatedTodo;
 			}
 	  
-			return item;
+			return todo;
 		  });
 	  
 		  setTodos(doneTodo)

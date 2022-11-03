@@ -7,9 +7,15 @@
 	row-gap: 10px;
 }
 
-.grid {
-	display:grid;
-	grid-template-columns: repeat(4, auto) ;
-	column-gap: 10px;
-	row-gap: 10px;
+.deleteButton {
+	justify-self: flex-end;
+	background: #DD7703;
+	border: none;
+	color:  black;
+	font-size: 1em;
+	font-weight: bold;
+	border-radius: 20%;
+	padding: 1px;
+	text-align: center;
+	margin-left: auto;
 }
