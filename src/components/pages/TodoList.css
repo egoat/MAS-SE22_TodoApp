@@ -1,5 +1,10 @@
+
 .todoList {
 	padding-top: 2em;
+	display:grid;
+	grid-template-columns: repeat(4, auto) ;
+	column-gap: 10px;
+	row-gap: 10px;
 }
 
 .grid {
