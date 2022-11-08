@@ -37,17 +37,20 @@ export const TodoList = ({todos, setTodos,todoTextInput,updateTodoText, showAllT
 		  setTodos(doneTodo)
 	}
 
+	const inputFilteredList=todos.filter( f=>f.text.toLowerCase().includes(todoTextInput.toLowerCase())||todoTextInput==='');
+	const filteredListPlusShowAll=	inputFilteredList.filter(showAllTodos? f=>f.done===false||f.done===true:f=>(f.done===false));
+
 	return (
     	<div className="todoList" id="todoList">
 					{
-						todos.filter(showAllTodos? f=>f.text.includes(todoTextInput)||todoTextInput==='':(f=>(f.text.includes(todoTextInput)||(todoTextInput===''))&&f.done===false)).map(todos=>(
+							filteredListPlusShowAll.length?  (filteredListPlusShowAll.map(todos=>(
 							<Fragment key={todos.id}>
 								<input type="checkbox" className="checkbox" defaultChecked={todos.done} onChange={()=>isDone(todos.id)}></input>
 								<Priority />
 								<div style={{textDecoration: todos.done? 'line-through': 'none', opacity: todos.done? 0.7 : 1}}> {todos.text} </div>
 								<button className="deleteButton" onClick={()=>deleteTodo(todos.id)} >&#x2718;</button>
 							</Fragment>
-						))
+						))):  (<div className="error" >No todos found!</div>)
 					}
 					</div>
 

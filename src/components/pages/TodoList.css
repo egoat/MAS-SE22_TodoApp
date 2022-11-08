@@ -19,3 +19,9 @@
 	text-align: center;
 	margin-left: auto;
 }
+
+.error{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
