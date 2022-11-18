@@ -1,4 +1,6 @@
 .content {
 	grid-area: content;
 	background: #EFCCA5;
+	width:80%;
+
 }
