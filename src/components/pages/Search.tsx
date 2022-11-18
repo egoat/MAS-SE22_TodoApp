@@ -28,12 +28,14 @@ interface Props {
 		function showAll(event:any){
 			updateShowAllTodos(!showAllTodos)
 		}
+		const emptyInput=!todoTextInput
+		const buttonClassName=emptyInput? "disabledAddBtn":"EnabledAddBtn"
 
 	return (
 		<div className="search">
 			<div className="search_input">
 					<input type="text" value={todoTextInput} onChange={handleChange} placeholder="Todo..." />
-					<button type="button" onClick={e => addTodo()}>Add</button>
+					<button type="button"  className={buttonClassName} disabled={emptyInput} onClick={e => addTodo()}>Add</button>
 				</div>         
 				<label htmlFor="showAll"><input type="checkbox" id="showAll" defaultChecked={showAllTodos} onChange={showAll}></input>show all</label>
 		</div>
