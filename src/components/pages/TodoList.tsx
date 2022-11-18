@@ -60,7 +60,7 @@ export const TodoList = ({todos, setTodos,newTodoText,showAll}: Props) =>{
 					{
 							filteredListPlusShowAll.length?  (filteredListPlusShowAll.map(todo=>(
 							<Fragment key={todo.id}>
-								<input type="checkbox" className="checkbox" defaultChecked={todo.done} onChange={()=>isDone(todo.id)}></input>
+								<input type="checkbox" className="checkbox" checked={todo.done} onChange={()=>isDone(todo.id)}></input>
 								<Priority todo={todo} updateImportance={updateImportance}/>
 								<div style={{textDecoration: todo.done? 'line-through': 'none', opacity: todo.done? 0.7 : 1}}> {todo.text} </div>
 								<button className="deleteButton" onClick={()=>deleteTodo(todo.id)} >&#x2718;</button>
