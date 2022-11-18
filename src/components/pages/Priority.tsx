@@ -1,6 +1,5 @@
 import { Importance } from 'models/Importance'
 import { Todo } from 'models/Todo'
-import {useState} from 'react'
 import './Priority.css'
 
 interface Props {
