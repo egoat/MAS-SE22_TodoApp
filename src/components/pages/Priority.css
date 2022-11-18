@@ -3,31 +3,32 @@ span{
     color:inherit;
   }
   .one-active > .arrow-one{
-    background-color: green;
-    color: red;
+    /**/
   }
   .one-active > .arrow-two, .arrow-three{
     background-color: inherit;
+    filter: grayscale(100%);
     color: black;
   }
   .two-active > .arrow-one,.arrow-two{
-    background-color: green;
-    color: red;
+    /**/
   }
   .two-active > .arrow-three{
     background-color: inherit;
+    filter: grayscale(100%);
     color: black;
   }
   
   .three-active > span{
-    background-color: green;
-    color: red;
+    filter: grayscale(0%);
   }
   
   .parent:hover span{
-    background-color: orange;
+    filter: grayscale(0%);
+
   }
   .parent span:hover ~ span {
     background-color: inherit;
+    filter: grayscale(100%);
     color: black;
   }
