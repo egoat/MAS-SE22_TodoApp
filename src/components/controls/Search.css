@@ -11,15 +11,20 @@
 	border-style: solid;
 	border-color: #70A72C;
  }
+ 
+input[type="checkbox"] {
+    accent-color: #70A72C; 
+}
 
- button:enabled:hover {
+button:enabled:hover {
 	filter: brightness(85%);
-  }
+}
 
 .disabledAddBtn{
 	line-height: 1.1em;
 	font-size: 1em;
 	background-color: #70A72C;
+	opacity: 0.6;	
 	border-style: solid;
 	border-color: #70A72C;
 	color:white;

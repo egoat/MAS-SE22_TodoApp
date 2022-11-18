@@ -1,7 +1,7 @@
 import './TodoList.css'
 import { Todo } from 'models/Todo'
 import { Fragment } from 'react'
-import {Priority} from './Priority'
+import {Priority} from '../controls/Priority'
 import { Importance } from 'models/Importance'
 
 interface Props {

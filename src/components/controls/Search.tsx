@@ -36,5 +36,3 @@ interface Props {
 		</div>
 	)
 }
-
-
