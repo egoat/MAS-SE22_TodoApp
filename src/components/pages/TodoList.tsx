@@ -2,18 +2,16 @@ import './TodoList.css'
 import { Todo } from 'models/Todo'
 import { Fragment } from 'react'
 import {Priority} from './Priority'
+import { Importance } from 'models/Importance'
 
 interface Props {
 	todos: Todo[]
 	setTodos: (todos: Todo[]) => void
-	todoTextInput:string
-	updateTodoText:(todoTextInput:string)=>void
-	showAllTodos:boolean
-	updateShowAllTodos: (showAllTodos:boolean) => void
-
+	newTodoText:string
+	showAll:boolean
 }
 
-export const TodoList = ({todos, setTodos,todoTextInput,updateTodoText, showAllTodos,updateShowAllTodos}: Props) =>{
+export const TodoList = ({todos, setTodos,newTodoText,showAll}: Props) =>{
 	function deleteTodo(id:any){
 		console.log(id)
 		const todoRemovedList=todos.filter((todos)=> todos.id!==id)
@@ -39,16 +37,17 @@ export const TodoList = ({todos, setTodos,todoTextInput,updateTodoText, showAllT
 
 	const inputFilteredList=todos.filter( f=>f.text.toLowerCase().includes(todoTextInput.toLowerCase())||todoTextInput==='');
 	const filteredListPlusShowAll=	inputFilteredList.filter(showAllTodos? f=>f.done===false||f.done===true:f=>(f.done===false));
+	const filteredListPlusShowAll=	inputFilteredList.filter(showAll? f=>f.done===false||f.done===true:f=>(f.done===false));
 
 	return (
     	<div className="todoList" id="todoList">
 					{
-							filteredListPlusShowAll.length?  (filteredListPlusShowAll.map(todos=>(
-							<Fragment key={todos.id}>
-								<input type="checkbox" className="checkbox" defaultChecked={todos.done} onChange={()=>isDone(todos.id)}></input>
+							filteredListPlusShowAll.length?  (filteredListPlusShowAll.map(todo=>(
+							<Fragment key={todo.id}>
+								<input type="checkbox" className="checkbox" defaultChecked={todo.done} onChange={()=>isDone(todo.id)}></input>
 								<Priority />
-								<div style={{textDecoration: todos.done? 'line-through': 'none', opacity: todos.done? 0.7 : 1}}> {todos.text} </div>
-								<button className="deleteButton" onClick={()=>deleteTodo(todos.id)} >&#x2718;</button>
+								<div style={{textDecoration: todo.done? 'line-through': 'none', opacity: todo.done? 0.7 : 1}}> {todo.text} </div>
+								<button className="deleteButton" onClick={()=>deleteTodo(todo.id)} >&#x2718;</button>
 							</Fragment>
 						))):  (<div className="error" >No todos found!</div>)
 					}

@@ -12,16 +12,16 @@ const initialTodoes: Todo[] = [
 
 export const App = () => {
 	const [todos,setTodos] = useState<Todo[]>(initialTodoes)	
-	const [todoTextInput,updateTodoText]= useState('')
-	const [showAllTodos,updateShowAllTodos]= useState(true)
+	const [newTodoText,setNewTodoText]= useState('')
+	const [showAll,setShowAll]= useState(true)
 
 	return (
 		<div className="outerContainer">
     		<div className="container">
   	  			<Appbar />
     			<div className="content">
-					<Search todos={todos} setTodos={setTodos} todoTextInput={todoTextInput} updateTodoText={updateTodoText} showAllTodos={showAllTodos} updateShowAllTodos={updateShowAllTodos} />
-					<TodoList todos={todos} setTodos={setTodos} todoTextInput={todoTextInput} updateTodoText={updateTodoText} showAllTodos={showAllTodos} updateShowAllTodos={updateShowAllTodos}/>
+					<Search todos={todos} setTodos={setTodos} newTodoText={newTodoText} setNewTodoText={setNewTodoText} showAll={showAll} setShowAll={setShowAll} />
+					<TodoList todos={todos} setTodos={setTodos} newTodoText={newTodoText} showAll={showAll}/>
 				</div>
 				<Footer />
     		</div>
