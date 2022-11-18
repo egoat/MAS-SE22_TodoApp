@@ -35,8 +35,24 @@ export const TodoList = ({todos, setTodos,newTodoText,showAll}: Props) =>{
 		  setTodos(doneTodo)
 	}
 
-	const inputFilteredList=todos.filter( f=>f.text.toLowerCase().includes(todoTextInput.toLowerCase())||todoTextInput==='');
-	const filteredListPlusShowAll=	inputFilteredList.filter(showAllTodos? f=>f.done===false||f.done===true:f=>(f.done===false));
+	function updateImportance(id:string, importance:Importance){
+		const updatedeTodo = todos.map((todo) => {
+			if (todo.id === id) {
+			  const updatedTodo = {
+				...todo,
+				importance: importance,
+			  };
+	  
+			  return updatedTodo;
+			}
+	  
+			return todo;
+		  });
+	  
+		  setTodos(updatedeTodo)
+	}
+
+	const inputFilteredList=todos.filter( f=>f.text.toLowerCase().includes(newTodoText.toLowerCase())||newTodoText==='');
 	const filteredListPlusShowAll=	inputFilteredList.filter(showAll? f=>f.done===false||f.done===true:f=>(f.done===false));
 
 	return (
@@ -45,7 +61,7 @@ export const TodoList = ({todos, setTodos,newTodoText,showAll}: Props) =>{
 							filteredListPlusShowAll.length?  (filteredListPlusShowAll.map(todo=>(
 							<Fragment key={todo.id}>
 								<input type="checkbox" className="checkbox" defaultChecked={todo.done} onChange={()=>isDone(todo.id)}></input>
-								<Priority />
+								<Priority todo={todo} updateImportance={updateImportance}/>
 								<div style={{textDecoration: todo.done? 'line-through': 'none', opacity: todo.done? 0.7 : 1}}> {todo.text} </div>
 								<button className="deleteButton" onClick={()=>deleteTodo(todo.id)} >&#x2718;</button>
 							</Fragment>
