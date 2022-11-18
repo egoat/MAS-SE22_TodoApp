@@ -10,14 +10,16 @@
 	font-size: 1em;
  }
 
+ button:enabled:hover {
+	filter: brightness(85%);
+  }
+
 .disabledAddBtn{
 	line-height: 1.2em;
 	font-size: 1em;
 	background-color: #70A72C;
 	color:white;
 	cursor: not-allowed;
-    /*pointer-events: none;
-  	opacity: 0.8;*/
  }
 
  
