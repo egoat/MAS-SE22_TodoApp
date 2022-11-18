@@ -69,6 +69,6 @@ export const TodoList = ({todos, setTodos,newTodoText,showAll}: Props) =>{
 							</Fragment>
 						))) 
 					}
-					</div>)
+		</div>)
 	)
 }

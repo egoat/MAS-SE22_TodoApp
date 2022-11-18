@@ -24,14 +24,14 @@ interface Props {
 		}
 		
 		const emptyInput=!newTodoText
-		const buttonClassName=emptyInput? "disabledAddBtn":"EnabledAddBtn"
+		const buttonClassName=emptyInput? "disabledAddBtn":"enabledAddBtn"
 
 	return (
-		<div className="search">
+		<div className="searchBar">
 			<div >
-					<input className="search_input" type="text" value={newTodoText} onChange={handleChange} placeholder="Todo..." />
+					<input className="searchInput" type="text" value={newTodoText} onChange={handleChange} placeholder="Todo..." />
 					<button className={buttonClassName} type="button"   disabled={emptyInput} onClick={e => addTodo()}>Add</button>
-				</div>         
+			</div>         
 				<label className="ShowAllLabel" htmlFor="showAll"><input type="checkbox" id="showAll" checked={showAll} onChange={e => setShowAll(!showAll)}></input>show all</label>
 		</div>
 	)

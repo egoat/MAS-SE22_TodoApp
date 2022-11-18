@@ -22,8 +22,6 @@
 	margin-left: auto;
 }
 
-
-
 .error{
 	padding-top: 2em;
 	display: flex;
@@ -32,7 +30,7 @@
 
 .taskDone{
 	text-decoration: line-through;
-	opacity:0.7;
+	opacity:0.6;
 }
 
 .taskToBeDone{

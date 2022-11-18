@@ -2,9 +2,4 @@
 	grid-area: content;
 	background: #EFCCA5;
 	width:80%;
-
 }
-
-button:hover {
-	filter: brightness(85%);
-  }
