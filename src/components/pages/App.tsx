@@ -2,8 +2,8 @@ import './App.css'
 import {useState} from 'react'
 import {Appbar} from '../widgets/Appbar'
 import {Footer} from '../widgets/Footer'
-import {Search} from './Search'
-import {TodoList} from './TodoList'
+import {Search} from '../controls/Search'
+import {TodoList} from '../widgets/TodoList'
 import { Todo } from 'models/Todo'
 
 
