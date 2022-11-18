@@ -54,20 +54,21 @@ export const TodoList = ({todos, setTodos,newTodoText,showAll}: Props) =>{
 
 	const inputFilteredList=todos.filter( f=>f.text.toLowerCase().includes(newTodoText.toLowerCase())||newTodoText==='');
 	const filteredListPlusShowAll=	inputFilteredList.filter(showAll? f=>f.done===false||f.done===true:f=>(f.done===false));
-
+	const filterResultEmpty=!filteredListPlusShowAll.length
+//{validEmail ? null : <div>Please provide an email address</div>}
 	return (
-    	<div className="todoList" id="todoList">
-					{
-							filteredListPlusShowAll.length?  (filteredListPlusShowAll.map(todo=>(
+		filterResultEmpty?(<div className="error" >No todos found!</div>):
+    	(<div className="todoList" id="todoList">
+					{						
+							 (filteredListPlusShowAll.map(todo=>(
 							<Fragment key={todo.id}>
 								<input type="checkbox" className="checkbox" checked={todo.done} onChange={()=>isDone(todo.id)}></input>
 								<Priority todo={todo} updateImportance={updateImportance}/>
-								<div style={{textDecoration: todo.done? 'line-through': 'none', opacity: todo.done? 0.7 : 1}}> {todo.text} </div>
+								<div className={todo.done? "taskDone":"taskToBeDone"} > {todo.text} </div>
 								<button className="deleteButton" onClick={()=>deleteTodo(todo.id)} >&#x2718;</button>
 							</Fragment>
-						))):  (<div className="error" >No todos found!</div>)
+						))) 
 					}
-					</div>
-
+		</div>)
 	)
 }
