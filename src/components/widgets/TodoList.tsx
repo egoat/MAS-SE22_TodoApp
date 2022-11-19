@@ -55,7 +55,7 @@ export const TodoList = ({todos, setTodos,newTodoText,showAll}: Props) =>{
 	const inputFilteredList=todos.filter( f=>f.text.toLowerCase().includes(newTodoText.toLowerCase())||newTodoText==='');
 	const filteredListPlusShowAll=	inputFilteredList.filter(showAll? f=>f.done===false||f.done===true:f=>(f.done===false));
 	const filterResultEmpty=!filteredListPlusShowAll.length
-//{validEmail ? null : <div>Please provide an email address</div>}
+
 	return (
 		filterResultEmpty?(<div className="error" >No todos found!</div>):
     	(<div className="todoList" id="todoList">
